@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Management</title>
+    <!-- flowbite  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <!-- fontawesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- animation  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Tailwind  -->
+    <link rel="stylesheet" href="../../src/output.css" />
+    <!-- CSS main  -->
+    <link rel="stylesheet" href="../../asset/css/style.css" />
+  </head>
+  <body class="bg-gradient-to-r bg-red-300 to-violet-400">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+      <div class="flex justify-center items-center">
+        <div
+          class="w-[40%] h-[40%] border rounded-2xl animate__animated animate__tada animate__delay-2s"
+        >
+          <a href="./admin/view/admin.html" class="flex flex-col items-center">
+            <img src="./asset/image/admin.png" alt="" />
+            <div
+              class="border-2 px-3 py-2 rounded-2xl font-bold text-4xl hover:text-green-200 delay-75 transition-all duration-75 animate__animated animate__shakeY animate__delay-4s"
+            >
+              Admin
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center items-center pt-9">
+        <div
+          class="w-[50%] h-[50%] animate__animated animate__tada animate__delay-2s"
+        >
+          <a
+            href="./custommer/view/customer.html"
+            class="flex flex-col items-center"
+          >
+            <img src="./asset/image/Customer.png" alt="" />
+            <div
+              class="border-2 px-3 py-2 rounded-2xl font-bold text-4xl hover:text-green-200 delay-75 transition-all duration-75 animate__animated animate__shakeY animate__delay-4s"
+            >
+              Customer
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- wowjs -->
+    <script src="../../asset/libs/WOW-master/dist/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  </body>
+</html>
