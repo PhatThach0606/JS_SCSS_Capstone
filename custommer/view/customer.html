@@ -28,6 +28,81 @@
     <link rel="stylesheet" href="../../asset/css/style.css" />
   </head>
   <body>
+    <div class="layout">
+      <header class="header background">
+        <nav class="container mx-auto py-1 px-4 sm:px-3">
+          <div class="flex justify-between items-center text-white">
+            <div class="flex items-center gap-8 sm:gap-12 md:gap-17">
+              <!-- logo  -->
+              <div class="w-[80px] md:w-[110px] h-auto logo">
+                <img src="../../asset/image/logo.png" alt="" />
+              </div>
+              <!-- back page  -->
+              <div class="flex justify-between gap-5">
+                <!-- home  -->
+                <div class="flex flex-col text-center">
+                  <a href="../../index.html"
+                    ><i class="fa-solid fa-house text-xl md:text-[25px]"> </i>
+                    <div class="font-semibold">Home</div></a
+                  >
+                </div>
+                <!-- admin  -->
+                <div class="flex flex-col text-center">
+                  <a href="../../admin/view/admin.html">
+                    <i class="fa-solid fa-user-tie text-xl md:text-[25px]"> </i>
+                    <div class="font-semibold">Admin</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- cart shoping  -->
+            <div class="flex flex-col text-center">
+              <a href=""
+                ><i
+                  class="fa-solid fa-cart-shopping text-xl md:text-[25px]"
+                ></i>
+                <div class="font-semibold">Cart</div>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <div class="w-full h-[0.5px] bg-gray-500 opacity-25"></div>
+        <section class="container mx-auto pt-20 px-5">
+          <div class="carousel grid grid-cols-1 md:grid-cols-2">
+            <div class="">
+              <div class="xl:pt-25 xl:pl-10">
+                <h2
+                  class="font-bold text-3xl md:text-4xl text-white text-center sm:text-left"
+                >
+                  iPhone 16｜iPhone 16 Pro
+                </h2>
+                <p
+                  class="font-semibold text-2xl text-gray-400 pt-5 xl:w-[70%] text-center sm:text-left"
+                >
+                  Sở hữu chip A18 Bionic mạnh mẽ, màn hình Super Retina XDR sắc
+                  nét. Mua iPhone 16 Pro tặng kèm tai nghe AirPods Pro. Đổi cũ
+                  lấy mới, nhận ưu đãi đến 700$.
+                </p>
+                <p
+                  class="font-semibold text-amber-100 text-center sm:text-left pt-5 md:text-xl"
+                >
+                  Nhanh tay lên, số lượng có hạn!
+                </p>
+              </div>
+            </div>
+            <div class="items-center">
+              <img src="../../asset/image/ip16.png" alt="" />
+            </div>
+          </div>
+        </section>
+      </header>
+      <main class="main">
+        <section>
+          <div class="render-product"></div>
+        </section>
+      </main>
+      <footer class="footer">Footer</footer>
+    </div>
     <!-- flowbite  -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <!-- wowjs -->
