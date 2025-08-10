@@ -1,0 +1,40 @@
+.bgindex {
+
+        background:linear-gradient(rgba(255, 0, 0, 0.2),  
+  rgba(0, 0, 0, 1)), url(../../asset/image/bg_index.jpg);
+      background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+.layout {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer"
+    ;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    .header {
+        grid-area: header ;
+    
+    }
+    .main{
+        grid-area: main;
+        display: grid;
+        grid-template-areas: "carousel" "render-product";
+        .carousel {
+            grid-area: carousel;
+        }
+        .render-product{
+            grid-area: render-product;
+        }
+        
+    }
+    .footer {
+        grid-area: footer ;
+        background-color: pink;
+    }
+}

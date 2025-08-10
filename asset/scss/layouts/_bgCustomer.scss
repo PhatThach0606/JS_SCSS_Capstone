@@ -1,0 +1,23 @@
+
+@media (min-width: 1080px) {
+    .background {
+        background:linear-gradient(rgba(0, 23, 75, 0.8), 
+    rgba(0, 0, 0, 0.5)), url(../../asset/image/bgCustomer.jpg);
+      background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 800px;
+    }
+}
+@media (min-width: 200px) and (max-width: 1080px) {
+    .background {
+         background:linear-gradient(rgba(0, 23, 75, 0.8), 
+    rgba(0, 0, 0, 0.5)), url(../../asset/image/bg_sm.jpg);
+      background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 800px;
+    }
+}
