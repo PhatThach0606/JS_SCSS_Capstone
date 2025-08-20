@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 @media (max-width: 768px) {
     .center-cart {
@@ -18,3 +19,4 @@
         transform: translateX(0);
     }
 }
+
