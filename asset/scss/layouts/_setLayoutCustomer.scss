@@ -23,18 +23,13 @@
     }
     .main{
         grid-area: main;
-        display: grid;
-        grid-template-areas: "carousel" "render-product";
-        .carousel {
-            grid-area: carousel;
-        }
-        .render-product{
-            grid-area: render-product;
-        }
-        
     }
     .footer {
         grid-area: footer ;
-        background-color: pink;
+        background-color: black;
     }
+}
+.scrolled {
+ background: rgba(0, 0, 0, 0.7);
+ transition: all 0.2s;
 }
