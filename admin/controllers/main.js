@@ -197,8 +197,7 @@ function onEdit(id) {
             getId("loader").style.display = "none";
 
         })
-    // Update Product 
-    // getId("btnUpdate").addEventListener("click", onUpdateProduct(id))
+
 }
 window.onEdit = onEdit;
 
@@ -222,7 +221,7 @@ function onUpdateProduct(id) {
         .then(function (result) {
             getId("loader").style.display = "none";
             const data = result.data;
-            alert(`Update ${data.name} success`);
+            // alert(`Update ${data.name} success`);
 
             // close modal 
             getId("close-Modal").click();
