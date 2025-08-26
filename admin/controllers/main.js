@@ -34,6 +34,7 @@ function getInfoProduct(isAdd) {
 }
 function getListProduct() {
     const promise = service.fetchListData();
+    let count = 0;
     // pending => show loader
     getId("loader").style.display = "block";
 
@@ -41,7 +42,12 @@ function getListProduct() {
         .then(function (result) {
             console.log(result.data);
             listProduct = result.data;
+            const count = listProduct.length;
             renderHTML(result.data);
+            // Show Quantity Product 
+            getId("qtyProduct").innerHTML = count;
+            getId("qtyProduct").style.display = "block";
+
             // hidden loader
             getId("loader").style.display = "none";
         })
@@ -74,14 +80,14 @@ function renderHTML(data) {
                       <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         ${product.name}
                       </th>
-                      <td class="px-6 py-4">
+                      <td class="px-6 py-4 ">
                         <img src="./../../asset/image/${product.img}" alt="" width="50">
                       </td>
-                      <td class="px-6 py-4">
+                      <td class="px-6 py-4 text-white">
                         ${product.type}
                       </td>
-                      <td class="px-6 py-4">
-                        ${product.price} $
+                      <td class="px-6 py-4 text-white">
+                          ${(product.price * 1000).toLocaleString("vi-VN")} ₫
                       </td>
                       <td class="sm:flex-row md:flex lg:flex items-center space-x-2 px-6 py-4 gap-1 align-middle">
                         <button  class="font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline" 
@@ -102,7 +108,7 @@ getId("btnThemSP").addEventListener("click", function () {
     openModal()
 
     // Update Title Modal 
-    getId("titleSP").innerHTML = "Them Moi San Pham";
+    getId("titleSP").innerHTML = "Thêm Mới Sản Phẩm";
 
     // Create button "Add Product"
     const btnAddProduct = `    <button  data-modal-toggle="crud-modal"
@@ -110,7 +116,7 @@ getId("btnThemSP").addEventListener("click", function () {
                                onclick="onAddProduct()"
                               type="button">
                               <i class="fa-solid fa-cart-plus"></i>
-                              Them moi
+                              Thêm mới
                             </button>`
     document.getElementsByClassName("classSubmit")[0].innerHTML = btnAddProduct;
     // reset form 
@@ -169,14 +175,14 @@ function onEdit(id) {
     // Open Modal 
     openModal();
     // Update Title Modal 
-    getId("titleSP").innerHTML = "Cap Nhat San Pham";
+    getId("titleSP").innerHTML = "Cập Nhật Sản Phẩm";
     // Create button "Update Product"
     const btnUpdateProduct = `<button  data-modal-toggle="crud-modal"
                               class="block cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"           
                               onclick="onUpdateProduct(${id})"                
                               type="button">
-                              <i class="fa-solid fa-cart-plus"></i>
-                              Cap Nhat
+                             <i class="fa-solid fa-wrench"></i>
+                              Cập nhật
                             </button>`
     document.getElementsByClassName("classSubmit")[0].innerHTML = btnUpdateProduct;
     // pending => show loader
@@ -297,6 +303,4 @@ getId("table-search").addEventListener("keyup", function () {
 function resetForm() {
     getId("product-form").reset();
 }
-
-
 
