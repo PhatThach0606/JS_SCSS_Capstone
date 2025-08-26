@@ -15,9 +15,8 @@ function renderProduct(data) {
   <div class="flex flex-col items-center">
     <!-- Chỉ đặt aspect ratio cho ảnh -->
     <div class="w-full aspect-[] overflow-hidden">
-      <img src="${product.image}" alt="${
-      product.name
-    }" class="w-full h-full object-cover" loading="lazy"/>
+      <img src="./../../asset/image/${product.img}" alt="${product.name
+      }" class="w-full h-full object-cover" loading="lazy"/>
     </div>
     <div class="w-full px-6 pt-4 pb-6">
       <h2 class="text-lg font-semibold">${product.name}</h2>
@@ -127,7 +126,7 @@ function renderCart() {
     <div class="cart-item flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 bg-white rounded-2xl shadow-md hover:shadow-lg transition">
       
       <!-- Ảnh sản phẩm -->
-      <img src="${item.image}" alt="${item.name}" class="cart-img w-32 h-32 object-cover rounded-xl border"/>
+      <img src="./../../asset/image/${item.img}" alt="${item.name}" class="cart-img w-32 h-32 object-cover rounded-xl border"/>
 
       <!-- Thông tin sản phẩm -->
       <div class="cart-infor flex flex-col flex-1 text-center sm:text-left">
