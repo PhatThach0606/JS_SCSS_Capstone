@@ -1,0 +1,3 @@
+nav bar chua display fixed 
+loader chua responisve
+hoi lai cac responsive ro rang
