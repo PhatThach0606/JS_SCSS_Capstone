@@ -131,4 +131,11 @@
             transform: rotate(360deg);
   }
 }
+
+@media (max-width: 640px) {
+  .tabHeader-admin {
+    font-size: 12px;
+    width: 80px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
