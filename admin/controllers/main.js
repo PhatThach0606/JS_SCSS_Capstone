@@ -202,7 +202,7 @@ function onEdit(id) {
             getId("imgSP").value = data.img;
             getId("priceSP").value = data.price;
             getId("typeSP").value = data.type;
-            getId("motaSP").value = data.description;
+            getId("motaSP").value = data.desc;
         })
         .catch(function (error) {
             console.log(error);
