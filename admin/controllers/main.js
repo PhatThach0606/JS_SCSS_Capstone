@@ -83,10 +83,10 @@ function renderHTML(data) {
                       <td class="px-6 py-4 max-sm:hidden  ">
                         <img src="./../../asset/image/${product.img}" alt="" width="50">
                       </td>
-                      <td class="px-6 py-4 max-sm:hidden max-lg:hidden text-white">
+                      <td class="px-6 py-4 max-sm:hidden max-lg:hidden  text-gray-900 whitespace-nowrap dark:text-white">
                         ${product.type}
                       </td>
-                      <td class="px-6 py-4 text-white">
+                      <td class="px-6 py-4  text-gray-900 whitespace-nowrap dark:text-white">
                           ${(product.price * 1000).toLocaleString("vi-VN")} ₫
                       </td>
                       <td class="max-sm:flex-row max-lg:flex-row lg:flex items-center space-x-2 px-6 py-4 gap-1 align-middle">
