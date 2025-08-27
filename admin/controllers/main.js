@@ -80,16 +80,16 @@ function renderHTML(data) {
                       <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         ${product.name}
                       </th>
-                      <td class="px-6 py-4 ">
+                      <td class="px-6 py-4 max-sm:hidden  ">
                         <img src="./../../asset/image/${product.img}" alt="" width="50">
                       </td>
-                      <td class="px-6 py-4 text-white">
+                      <td class="px-6 py-4 max-sm:hidden max-lg:hidden text-white">
                         ${product.type}
                       </td>
                       <td class="px-6 py-4 text-white">
                           ${(product.price * 1000).toLocaleString("vi-VN")} ₫
                       </td>
-                      <td class="sm:flex-row md:flex lg:flex items-center space-x-2 px-6 py-4 gap-1 align-middle">
+                      <td class="max-sm:flex-row max-lg:flex-row lg:flex items-center space-x-2 px-6 py-4 gap-1 align-middle">
                         <button  class="font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline" 
                         data-modal-target="edit-modal" data-modal-toggle="edit-modal" 
                         onclick="onEdit(${product.id})">Sửa</button>
