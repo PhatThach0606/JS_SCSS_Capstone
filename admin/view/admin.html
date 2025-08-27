@@ -1,291 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="icon" href="./../../asset/image/admin.png" />
+    <!-- animation  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- flowbite  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <!-- fontawesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Tailwind  -->
+    <!-- <link rel="stylesheet" href="../../src/output.css" /> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- CSS main  -->
+    <link rel="stylesheet" href="./../../asset/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin</title>
-  <!-- animation  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <!-- flowbite  -->
-  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-  <!-- fontawesome  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Tailwind  -->
-  <!-- <link rel="stylesheet" href="../../src/output.css" /> -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <!-- CSS main  -->
-  <link rel="stylesheet" href="./../../asset/css/style.css">
-</head>
-
-<body>
-  <!-- SideBar  -->
-  <div class="sidebar">
-    <aside id="logo-sidebar"
-      class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
-      aria-label="Sidebar">
-      <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-        <a href="https://flowbite.com/" class="flex items-center ps-2.5 mb-5">
-          <img src="./../../asset/image/logo.png" class="  w-1/4" alt="Flowbite Logo" />
-          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Mobile Shop</span>
-        </a>
-        <ul class="space-y-2 font-medium">
-          <li>
-            <a href="./../../index.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <i class="fa-solid fa-house"></i>
-              <span class="ms-3">Trang chủ</span>
-            </a>
-          </li>
-          <li>
-            <a href="./../../custommer/view/customer.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <svg
-                class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-                <path
-                  d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
-              </svg>
-              <span class="flex-1 ms-3 whitespace-nowrap">Trang Khách Hàng</span>
-            </a>
-          </li>
-          <li>
-            <a href="./../../index.html"
-              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <svg
-                class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
-              </svg>
-              <span class="flex-1 ms-3 whitespace-nowrap">Thoát</span>
-            </a>
-          </li>
-          <li class="flex justify-center items-center max-sm:hidden w-full">
-            <div id="loader" class="loader whitespace-nowrap  p-2 ">
-            </div>
-
-          </li>
-        </ul>
-      </div>
-    </aside>
-    <div class="relative pb-4 sm:ml-64">
-      <!-- Header -->
-      <div class="containerAdmin  pb-4">
-        <div id="header">
-          <nav class="headerAdmin border-gray-40 ">
-            <div class="max-w-screen-xl  flex flex-wrap items-center justify-between mx-auto p-4">
-              <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <i class="fa-solid fa-screwdriver-wrench sm:text-xl md:text-2xl lg:text-2xl"></i>
-                <span class="self-center sm:text-xl md:text-2xl lg:text-2xl font-bold whitespace-nowrap ">Admin</span>
+  <body>
+    <!-- SideBar  -->
+    <div class="sidebar">
+      <aside
+        id="logo-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        aria-label="Sidebar"
+      >
+        <div
+          class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800"
+        >
+          <a href="https://flowbite.com/" class="flex items-center ps-2.5 mb-5">
+            <img
+              src="./../../asset/image/logo.png"
+              class="w-1/4"
+              alt="Flowbite Logo"
+            />
+            <span
+              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+              >Mobile Shop</span
+            >
+          </a>
+          <ul class="space-y-2 font-medium">
+            <li>
+              <a
+                href="./../../index.html"
+                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <i class="fa-solid fa-house"></i>
+                <span class="ms-3">Trang chủ</span>
               </a>
-              <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
-                type="button"
-                class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-black-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 ">
-                <span class="sr-only">Open sidebar</span>
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path clip-rule="evenodd" fill-rule="evenodd"
-                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
-                  </path>
+            </li>
+            <li>
+              <a
+                href="./../../custommer/view/customer.html"
+                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <svg
+                  class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 18"
+                >
+                  <path
+                    d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"
+                  />
                 </svg>
-              </button>
-              <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
-                <ul
-                  class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
-                  <li>
-                    <a href="./../../index.html"
-                      class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700">
-                      <i class="fa-solid fa-house"></i>
-                      Trang chủ</a>
-                  </li>
-                  <li>
-                    <a href="./../../custommer/view/customer.html"
-                      class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700">
-                      <i class="fa-solid fa-user"></i>
-                      Khách hàng</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+                <span class="flex-1 ms-3 whitespace-nowrap"
+                  >Trang Khách Hàng</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="./../../index.html"
+                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <svg
+                  class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 18 16"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"
+                  />
+                </svg>
+                <span class="flex-1 ms-3 whitespace-nowrap">Thoát</span>
+              </a>
+            </li>
+            <li class="flex justify-center items-center max-sm:hidden w-full">
+              <div id="loader" class="loader whitespace-nowrap p-2"></div>
+            </li>
+          </ul>
         </div>
-      </div>
-      <!-- Card-Table  -->
-      <div class=" px-4 card-content w-full">
-        <div class="items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row  ">
-          <div id="content">
-            <div class="w-full mx-auto mt-5">
-              <div class="border-b tab-content flex justify-between">
-                <!-- Head-Content -->
-                <div class="px-4 py-2  ">
-                  <h2 class="text-gray-700 font-bold">Danh sách sản phẩm</h2>
+      </aside>
+      <div class="relative pb-4 sm:ml-64">
+        <!-- Header -->
+        <div class="containerAdmin pb-4">
+          <div id="header">
+            <nav class="headerAdmin border-gray-40">
+              <div
+                class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+              >
+                <a
+                  href="#"
+                  class="flex items-center space-x-3 rtl:space-x-reverse"
+                >
+                  <i
+                    class="fa-solid fa-screwdriver-wrench sm:text-xl md:text-2xl lg:text-2xl"
+                  ></i>
+                  <span
+                    class="self-center sm:text-xl md:text-2xl lg:text-2xl font-bold whitespace-nowrap"
+                    >Admin</span
+                  >
+                </a>
+                <button
+                  data-drawer-target="logo-sidebar"
+                  data-drawer-toggle="logo-sidebar"
+                  aria-controls="logo-sidebar"
+                  type="button"
+                  class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-black-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                >
+                  <span class="sr-only">Open sidebar</span>
+                  <svg
+                    class="w-6 h-6"
+                    aria-hidden="true"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      fill-rule="evenodd"
+                      d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  class="hidden w-full md:block md:w-auto"
+                  id="navbar-solid-bg"
+                >
+                  <ul
+                    class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent"
+                  >
+                    <li>
+                      <a
+                        href="./../../index.html"
+                        class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700"
+                      >
+                        <i class="fa-solid fa-house"></i>
+                        Trang chủ</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="./../../custommer/view/customer.html"
+                        class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700"
+                      >
+                        <i class="fa-solid fa-user"></i>
+                        Khách hàng</a
+                      >
+                    </li>
+                  </ul>
                 </div>
-                <!-- btnThemSP  -->
-                <div class="px-4 py-2 modalContent">
-
-                  <!-- Modal toggle -->
-                  <button id="btnThemSP" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                    class="block cursor-pointer text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                    type="button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    Thêm sản phẩm
-                  </button>
-                  <!-- Main modal -->
-                  <div id="crud-modal" tabindex="-1" aria-hidden="true"
-                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                    <div class="relative p-4 w-full max-w-md max-h-full">
-                      <!-- Modal content -->
-                      <div class="modal-content relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-                        <!-- Modal header -->
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- Card-Table  -->
+        <div class="px-4 card-content w-full">
+          <div
+            class="items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row"
+          >
+            <div id="content">
+              <div class="w-full mx-auto mt-5">
+                <div class="border-b tab-content flex justify-between">
+                  <!-- Head-Content -->
+                  <div class="px-4 py-2">
+                    <h2 class="text-gray-700 font-bold">Danh sách sản phẩm</h2>
+                  </div>
+                  <!-- btnThemSP  -->
+                  <div class="px-4 py-2 modalContent">
+                    <!-- Modal toggle -->
+                    <button
+                      id="btnThemSP"
+                      data-modal-target="crud-modal"
+                      data-modal-toggle="crud-modal"
+                      class="block cursor-pointer text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                      type="button"
+                    >
+                      <i class="fa-solid fa-cart-plus"></i>
+                      Thêm sản phẩm
+                    </button>
+                    <!-- Main modal -->
+                    <div
+                      id="crud-modal"
+                      tabindex="-1"
+                      aria-hidden="true"
+                      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+                    >
+                      <div class="relative p-4 w-full max-w-md max-h-full">
+                        <!-- Modal content -->
                         <div
-                          class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-                          <h3 id="titleSP" class="text-lg font-semibold text-gray-900 dark:text-white">
-                            Thêm Mới Sản Phẩm
-                          </h3>
-                          <button type="button" id="close-Modal"
-                            class="text-gray-400 cursor-pointer bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-toggle="crud-modal">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                              viewBox="0 0 14 14">
-                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span id="closeModal" class="sr-only">Close modal</span>
-                          </button>
-                        </div>
-                        <!-- Modal body -->
-                        <form class="p-4 md:p-5" id="product-form">
-                          <div class="grid gap-4 mb-4 grid-cols-2">
-                            <div class="form-group col-span-2">
-                              <label for="nameSP"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tên sản
-                                phẩm</label>
-                              <input type="text" name="name" id="nameSP"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                placeholder="Nhập tên sản phẩm" required="">
-                              <span class="thongbao text-[12px] none hidden pt-[4px] font-bold text-red-600"
-                                id="validName"></span>
-                            </div>
-                            <div class="form-group col-span-2">
-                              <label for="imgSP" class="block mb-2  text-sm font-medium text-gray-900 dark:text-white">
-                                Hình ảnh sản phẩm
-                              </label>
-                              <input type="text" name="img" id="imgSP"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                placeholder="Nhập hình ảnh" required="">
-                              <span class="thongbao text-[12px] none hidden pt-[4px] font-bold text-red-600"
-                                id="validImg"></span>
-                            </div>
-                            <div class="form-group col-span-2 sm:col-span-1">
-                              <label for="priceSP"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Giá</label>
-                              <input type="number" name="price" id="priceSP"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                placeholder="Nhập giá" required="">
-                              <span class="thongbao text-[12px] none hidden pt-[4px] font-bold text-red-600"
-                                id="validPrice"></span>
-
-                            </div>
-                            <div class="form-group col-span-2 sm:col-span-1">
-                              <label for="typeSP"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Loại</label>
-                              <select id="typeSP"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">
-                                <option value>Loại</option>
-                                <option value="Apple">iphone</option>
-                                <option value="Samsung">samsung</option>
-                              </select>
-                              <span class="thongbao text-[12px] none hidden pt-[4px] font-bold text-red-600"
-                                id="validType"></span>
-
-                            </div>
-                            <div class="form-group col-span-2">
-                              <label for="motaSP"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mô
-                                tả</label>
-                              <textarea id="motaSP" rows="4"
-                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
-                                placeholder="Mô tả sản phẩm"></textarea>
-                              <span class="thongbao text-[12px] none hidden pt-[4px] font-bold text-red-600"
-                                id="validDescrip"></span>
-
-                            </div>
+                          class="modal-content relative bg-white rounded-lg shadow-sm dark:bg-gray-700"
+                        >
+                          <!-- Modal header -->
+                          <div
+                            class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200"
+                          >
+                            <h3
+                              id="titleSP"
+                              class="text-lg font-semibold text-gray-900 dark:text-white"
+                            >
+                              Thêm Mới Sản Phẩm
+                            </h3>
+                            <button
+                              type="button"
+                              id="close-Modal"
+                              class="text-gray-400 cursor-pointer bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                              data-modal-toggle="crud-modal"
+                            >
+                              <svg
+                                class="w-3 h-3"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 14 14"
+                              >
+                                <path
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                                />
+                              </svg>
+                              <span id="closeModal" class="sr-only"
+                                >Close modal</span
+                              >
+                            </button>
                           </div>
-                          <div class="classSubmit flex justify-end">
-                            <!-- <button id="btnSubmit" data-modal-toggle="crud-modal"
+                          <!-- Modal body -->
+                          <form class="p-4 md:p-5" id="product-form">
+                            <div class="grid gap-4 mb-4 grid-cols-2">
+                              <div class="form-group col-span-2">
+                                <label
+                                  for="nameSP"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                  >Tên sản phẩm</label
+                                >
+                                <input
+                                  type="text"
+                                  name="name"
+                                  id="nameSP"
+                                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                                  placeholder="Nhập tên sản phẩm"
+                                  required=""
+                                />
+                                <span
+                                  class="thongbao text-[12px] none hidden pt-[4px] font-bold text-red-600"
+                                  id="validName"
+                                ></span>
+                              </div>
+                              <div class="form-group col-span-2">
+                                <label
+                                  for="imgSP"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >
+                                  Hình ảnh sản phẩm
+                                </label>
+                                <input
+                                  type="text"
+                                  name="img"
+                                  id="imgSP"
+                                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                                  placeholder="Nhập hình ảnh"
+                                  required=""
+                                />
+                                <span
+                                  class="thongbao text-[12px] none hidden pt-[4px] font-bold text-red-600"
+                                  id="validImg"
+                                ></span>
+                              </div>
+                              <div class="form-group col-span-2 sm:col-span-1">
+                                <label
+                                  for="priceSP"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                  >Giá</label
+                                >
+                                <input
+                                  type="number"
+                                  name="price"
+                                  id="priceSP"
+                                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                                  placeholder="Nhập giá"
+                                  required=""
+                                />
+                                <span
+                                  class="thongbao text-[12px] none hidden pt-[4px] font-bold text-red-600"
+                                  id="validPrice"
+                                ></span>
+                              </div>
+                              <div class="form-group col-span-2 sm:col-span-1">
+                                <label
+                                  for="typeSP"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                  >Loại</label
+                                >
+                                <select
+                                  id="typeSP"
+                                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                                >
+                                  <option value>Loại</option>
+                                  <option value="Apple">iphone</option>
+                                  <option value="Samsung">samsung</option>
+                                </select>
+                                <span
+                                  class="thongbao text-[12px] none hidden pt-[4px] font-bold text-red-600"
+                                  id="validType"
+                                ></span>
+                              </div>
+                              <div class="form-group col-span-2">
+                                <label
+                                  for="motaSP"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                  >Mô tả</label
+                                >
+                                <textarea
+                                  id="motaSP"
+                                  rows="4"
+                                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                                  placeholder="Mô tả sản phẩm"
+                                ></textarea>
+                                <span
+                                  class="thongbao text-[12px] none hidden pt-[4px] font-bold text-red-600"
+                                  id="validDescrip"
+                                ></span>
+                              </div>
+                            </div>
+                            <div class="classSubmit flex justify-end">
+                              <!-- <button id="btnSubmit" data-modal-toggle="crud-modal"
                               class="block cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                               type="button">
                               <i class="fa-solid fa-cart-plus"></i>
                               Xac nhan
                             </button> -->
-                          </div>
-
-                        </form>
+                            </div>
+                          </form>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="table-content py-[20px]">
-              <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <div
-                  class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
-                  <div>
-                    <!-- Dropdown menu -->
-                    <div class="col-span-2 sm:col-span-1 ">
-                      <select id="sortPrice"
-                        class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg cursor-pointer block w-full p-4 ">
-                        <option selected>Giá</option>
-                        <option value="allPrice">Tất cả</option>
-                        <option value="higherPrice">Cao -> Thấp</option>
-                        <option value="lowerPrice">Thấp -> Cao</option>
-                      </select>
+              <div class="table-content py-[20px]">
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <div
+                    class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4"
+                  >
+                    <div>
+                      <!-- Dropdown menu -->
+                      <div class="col-span-2 sm:col-span-1">
+                        <select
+                          id="sortPrice"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg cursor-pointer block w-full p-4"
+                        >
+                          <option selected>Giá</option>
+                          <option value="allPrice">Tất cả</option>
+                          <option value="higherPrice">Cao -> Thấp</option>
+                          <option value="lowerPrice">Thấp -> Cao</option>
+                        </select>
+                      </div>
+                    </div>
+                    <label for="table-search" class="sr-only">Search</label>
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center ps-3 pointer-events-none"
+                      >
+                        <svg
+                          class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                          aria-hidden="true"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+                      <input
+                        type="text"
+                        id="table-search"
+                        class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Tìm kiếm tên sản phẩm"
+                      />
                     </div>
                   </div>
-                  <label for="table-search" class="sr-only">Search</label>
-                  <div class="relative">
-                    <div
-                      class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center ps-3 pointer-events-none">
-                      <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor"
-                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                          d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                          clip-rule="evenodd"></path>
-                      </svg>
-                    </div>
-                    <input type="text" id="table-search"
-                      class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="Tìm kiếm tên sản phẩm">
-                  </div>
-                </div>
 
-                <!-- BEGIN TABLE  -->
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                  <thead class="text-[16px] text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                      <th scope="col" class="px-6 py-3 text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm">
-                        Tên sản phẩm
-                      </th>
-                      <th scope="col" class="px-6 py-3  text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm">
-                        Hình ảnh
-                      </th>
-                      <th scope="col" class="px-6 py-3  text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm">
-                        Loại
-                      </th>
-                      <th scope="col" class="px-6 py-3  text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm">
-                        Giá tiền
-                      </th>
-                      <th scope="col" class="px-6 py-3  text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm">
-                        <i class="fa-solid fa-gear"></i>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody id="tlbDanhSachSP">
-                    <!-- <tr
+                  <!-- BEGIN TABLE  -->
+                  <table
+                    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                  >
+                    <thead
+                      class="text-[16px] text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                    >
+                      <tr>
+                        <th
+                          scope="col"
+                          class="px-6 py-3 text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm"
+                        >
+                          Tên sản phẩm
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-6 py-3 text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm"
+                        >
+                          Hình ảnh
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-6 py-3 text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm"
+                        >
+                          Loại
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-6 py-3 text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm"
+                        >
+                          Giá tiền
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-6 py-3 text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm"
+                        >
+                          <i class="fa-solid fa-gear"></i>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody id="tlbDanhSachSP">
+                      <!-- <tr
                       class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                       <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         Apple MacBook Pro 17"
@@ -304,28 +478,29 @@
                         <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ">Remove</a>
                       </td>
                     </tr> -->
-
-                  </tbody>
-                </table>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- flowbite  -->
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-  <!-- wowjs -->
-  <script src="../../asset/libs/WOW-master/dist/wow.min.js"></script>
-  <script>
-    new WOW().init();
-  </script>
-  <!-- Axios  -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
-    integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script type="module" src="./../controllers/main.js"></script>
-</body>
-
+    <!-- flowbite  -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <!-- wowjs -->
+    <script src="../../asset/libs/WOW-master/dist/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Axios  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
+      integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="./../controllers/main.js"></script>
+  </body>
 </html>

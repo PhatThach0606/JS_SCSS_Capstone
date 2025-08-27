@@ -14,9 +14,3 @@ closeCartBtn.addEventListener("click", function () {
   cart.classList.remove("translate-x-0");
   cart.classList.add("translate-x-full");
 });
-// Thanh toán
-const closeThanhToan = getId("thanhtoan");
-closeThanhToan.addEventListener("click", function () {
-  cart.classList.remove("translate-x-0");
-  cart.classList.add("translate-x-full");
-});
