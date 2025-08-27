@@ -231,3 +231,11 @@ getId("searchProduct").addEventListener("keyup", function () {
   const ProductSearch = searchProduct(keyword);
   renderProduct(ProductSearch);
 });
+// Clear Cart
+getId("thanhtoan").addEventListener("click", function () {
+  cartShoping.splice(0, cartShoping.length);
+  console.log(cartShoping.length);
+  getId("quantity").style.display = "none";
+  setLocoStorange();
+  renderCart(cartShoping);
+});
