@@ -127,7 +127,7 @@ function renderCart() {
     <div class="cart-item flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 bg-white rounded-2xl shadow-md hover:shadow-lg transition">
       
       <!-- Ảnh sản phẩm -->
-      <img src="${item.image}" alt="${item.name}" class="cart-img w-32 h-32 object-cover rounded-xl border"/>
+      <img src="./../../asset/image/${item.img}" alt="${item.name}" class="cart-img w-32 h-32 object-cover rounded-xl border"/>
 
       <!-- Thông tin sản phẩm -->
       <div class="cart-infor flex flex-col flex-1 text-center sm:text-left">
@@ -231,4 +231,12 @@ getId("searchProduct").addEventListener("keyup", function () {
   const keyword = getId("searchProduct").value;
   const ProductSearch = searchProduct(keyword);
   renderProduct(ProductSearch);
+});
+// Clear Cart
+getId("thanhtoan").addEventListener("click", function () {
+  cartShoping.splice(0, cartShoping.length);
+  console.log(cartShoping.length);
+  getId("quantity").style.display = "none";
+  setLocoStorange();
+  renderCart(cartShoping);
 });
