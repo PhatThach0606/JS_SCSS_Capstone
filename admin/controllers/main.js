@@ -8,7 +8,7 @@ const valid = new Validation();
 export function getId(id) {
     return document.getElementById(id);
 }
-function getInfoProduct(isAdd) {
+function getInfoProduct(isAdd, id) {
     const name = getId("nameSP").value;
     const img = getId("imgSP").value;
     const price = getId("priceSP").value;
@@ -17,18 +17,18 @@ function getInfoProduct(isAdd) {
 
     let isValid = true;
     if (isAdd) {
-
+        // Validation 
+        isValid &= valid.checkEmpty(name, "validName", "(*) Vui lòng nhập tên sản phẩm");
+        isValid &= valid.checkEmpty(img, "validImg", "(*) Vui lòng nhập hình sản phẩm");
+        isValid &= valid.checkEmpty(price, "validPrice", "(*) Vui lòng nhập giá sản phẩm");
+        isValid &= valid.checkSelectOption("typeSP", "validType", "(*) Vui lòng chọn loại sản phẩm");
+        isValid &= valid.checkEmpty(description, "validDescrip", "(*) Vui lòng nhập mô tả sản phẩm");
     }
-    // Validation 
-    isValid &= valid.checkEmpty(name, "validName", "(*) Vui lòng nhập tên sản phẩm");
-    isValid &= valid.checkEmpty(img, "validImg", "(*) Vui lòng nhập hình sản phẩm");
-    isValid &= valid.checkEmpty(price, "validPrice", "(*) Vui lòng nhập giá sản phẩm");
-    isValid &= valid.checkSelectOption("typeSP", "validType", "(*) Vui lòng chọn loại sản phẩm");
-    isValid &= valid.checkEmpty(description, "validDescrip", "(*) Vui lòng nhập mô tả sản phẩm");
+
 
     if (!isValid) return;
 
-    const product = new Product("", name, img, price, type, description);
+    const product = new Product(id, name, img, price, type, description);
 
     return product;
 }
@@ -148,7 +148,7 @@ window.onDelete = onDelete;
 
 // Add Product 
 function onAddProduct() {
-    const product = getInfoProduct();
+    const product = getInfoProduct(true, "");
     // pending => show loader
     if (!product) return;
     getId("loader").style.display = "block";
@@ -174,6 +174,12 @@ window.onAddProduct = onAddProduct;
 function onEdit(id) {
     // Open Modal 
     openModal();
+    // CLose isValid warning 
+    getId("validName").style.display = "none";
+    getId("validImg").style.display = "none";
+    getId("validPrice").style.display = "none";
+    getId("validType").style.display = "none";
+    getId("validDescrip").style.display = "none";
     // Update Title Modal 
     getId("titleSP").innerHTML = "Cập Nhật Sản Phẩm";
     // Create button "Update Product"
@@ -209,14 +215,16 @@ window.onEdit = onEdit;
 
 // Update Product
 function onUpdateProduct(id) {
-    const name = getId("nameSP").value;
-    const img = getId("imgSP").value;
-    const price = getId("priceSP").value;
-    const type = getId("typeSP").value;
-    const description = getId("motaSP").value;
+    const product = getInfoProduct(false, id)
+
+    // const name = getId("nameSP").value;
+    // const img = getId("imgSP").value;
+    // const price = getId("priceSP").value;
+    // const type = getId("typeSP").value;
+    // const description = getId("motaSP").value;
 
 
-    const product = new Product(id, name, img, price, type, description);
+    // const product = new Product(id, name, img, price, type, description);
 
     if (!product) return;
     // pending => show loader
