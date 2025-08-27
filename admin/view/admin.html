@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="./../../asset/css/style.css" />
   </head>
 
+<<<<<<< HEAD
   <body>
     <!-- SideBar  -->
     <div class="sidebar">
@@ -60,6 +61,96 @@
               >
                 <i class="fa-solid fa-house"></i>
                 <span class="ms-3">Trang chủ</span>
+=======
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin</title>
+  <!-- animation  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- flowbite  -->
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  <!-- fontawesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Tailwind  -->
+  <!-- <link rel="stylesheet" href="../../src/output.css" /> -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- CSS main  -->
+  <link rel="stylesheet" href="./../../asset/css/style.css">
+</head>
+
+<body>
+  <!-- SideBar  -->
+  <div class="sidebar">
+    <aside id="logo-sidebar"
+      class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      aria-label="Sidebar">
+      <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <a href="https://flowbite.com/" class="flex items-center ps-2.5 mb-5">
+          <img src="./../../asset/image/logo.png" class="  w-1/4" alt="Flowbite Logo" />
+          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Mobile Shop</span>
+        </a>
+        <ul class="space-y-2 font-medium">
+          <li>
+            <a href="./../../index.html"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <i class="fa-solid fa-house"></i>
+              <span class="ms-3">Trang chủ</span>
+            </a>
+          </li>
+          <li>
+            <a href="#table-product"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <i class="fa-solid fa-mobile"></i>
+              <span class="ms-3">Sản Phẩm </span>
+              <p class="pl-2 pb-1 hidden text-sm  pt-[4px] font-bold text-gray-400" id="qtyProduct"></p>
+            </a>
+
+          </li>
+          <li>
+            <a href="./../../custommer/view/customer.html"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <svg
+                class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                <path
+                  d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Trang Khách Hàng</span>
+            </a>
+          </li>
+          <li>
+            <a href="./../../index.html"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <svg
+                class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Thoát</span>
+            </a>
+          </li>
+          <li class="flex justify-center items-center max-sm:hidden w-full">
+            <div id="loader" class="loader whitespace-nowrap  p-2 ">
+            </div>
+
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="relative pb-4 sm:ml-64">
+      <!-- Header -->
+      <div class="containerAdmin  pb-4">
+        <div id="header">
+          <nav class="headerAdmin border-gray-40 ">
+            <div class="max-w-screen-xl  flex flex-wrap items-center justify-between mx-auto p-4">
+              <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <i class="fa-solid fa-screwdriver-wrench sm:text-xl md:text-2xl lg:text-2xl"></i>
+                <span class="self-center sm:text-xl md:text-2xl lg:text-2xl font-bold whitespace-nowrap ">Admin</span>
+>>>>>>> 1fe58d1f350b91c5596e8f6913984d4adc2e5505
               </a>
             </li>
             <li>
@@ -371,6 +462,7 @@
                   </div>
                 </div>
               </div>
+<<<<<<< HEAD
               <div class="table-content py-[20px]">
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                   <div
@@ -415,9 +507,28 @@
                         class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Tìm kiếm tên sản phẩm"
                       />
+=======
+            </div>
+
+            <div class="table-content py-[20px]">
+              <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <div
+                  class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
+                  <div>
+                    <!-- Dropdown menu -->
+                    <div class="col-span-2 sm:col-span-1 ">
+                      <select id="sortPrice"
+                        class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg cursor-pointer block w-full p-4 ">
+                        <option selected>Giá</option>
+                        <option value="allPrice">Tất cả</option>
+                        <option value="higherPrice">Cao -> Thấp</option>
+                        <option value="lowerPrice">Thấp -> Cao</option>
+                      </select>
+>>>>>>> 1fe58d1f350b91c5596e8f6913984d4adc2e5505
                     </div>
                   </div>
 
+<<<<<<< HEAD
                   <!-- BEGIN TABLE  -->
                   <table
                     class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
@@ -460,6 +571,37 @@
                     </thead>
                     <tbody id="tlbDanhSachSP">
                       <!-- <tr
+=======
+                <!-- BEGIN TABLE  -->
+                <table id="table-product"
+                  class="w-full  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <thead class="text-[16px]  text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                      <th scope="col"
+                        class="tabHeader-admin px-6 py-3  text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm">
+                        Tên sản phẩm
+                      </th>
+                      <th scope="col"
+                        class="tabHeader-admin px-6 py-3 max-sm:hidden   text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm">
+                        Hình ảnh
+                      </th>
+                      <th scope="col"
+                        class="tabHeader-admin px-6 py-3 max-sm:hidden max-lg:hidden   text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm">
+                        Loại
+                      </th>
+                      <th scope="col"
+                        class="tabHeader-admin px-6 py-3  text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm">
+                        Giá tiền
+                      </th>
+                      <th scope="col"
+                        class="tabHeader-admin px-6 py-3  text-[12px] sm:text-[12px] md:text-[16px] lg:text-sm">
+                        <i class="fa-solid fa-gear"></i>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="tlbDanhSachSP">
+                    <!-- <tr
+>>>>>>> 1fe58d1f350b91c5596e8f6913984d4adc2e5505
                       class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                       <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         Apple MacBook Pro 17"
@@ -487,6 +629,7 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <!-- flowbite  -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <!-- wowjs -->
@@ -504,3 +647,24 @@
     <script type="module" src="./../controllers/main.js"></script>
   </body>
 </html>
+=======
+
+
+  </div>
+  <!-- flowbite  -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  <!-- wowjs -->
+  <script src="../../asset/libs/WOW-master/dist/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <!-- Axios  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
+    integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="module" src="./../controllers/main.js"></script>
+</body>
+
+
+</html>
+>>>>>>> 1fe58d1f350b91c5596e8f6913984d4adc2e5505

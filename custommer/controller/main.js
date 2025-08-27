@@ -15,9 +15,8 @@ function renderProduct(data) {
   <div class="flex flex-col items-center">
     <!-- Chỉ đặt aspect ratio cho ảnh -->
     <div class="w-full aspect-[] overflow-hidden">
-      <img src="./../../asset/image/${product.img}" alt="${
-      product.name
-    }" class="w-full h-full object-cover" loading="lazy"/>
+      <img src="./../../asset/image/${product.img}" alt="${product.name
+      }" class="w-full h-full object-cover" loading="lazy"/>
     </div>
     <div class="w-full px-6 pt-4 pb-6">
       <h2 class="text-lg font-semibold">${product.name}</h2>

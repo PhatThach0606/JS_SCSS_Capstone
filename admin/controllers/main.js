@@ -8,7 +8,7 @@ const valid = new Validation();
 export function getId(id) {
     return document.getElementById(id);
 }
-function getInfoProduct(isAdd) {
+function getInfoProduct(isAdd, id) {
     const name = getId("nameSP").value;
     const img = getId("imgSP").value;
     const price = getId("priceSP").value;
@@ -17,23 +17,24 @@ function getInfoProduct(isAdd) {
 
     let isValid = true;
     if (isAdd) {
-
+        // Validation 
+        isValid &= valid.checkEmpty(name, "validName", "(*) Vui lòng nhập tên sản phẩm");
+        isValid &= valid.checkEmpty(img, "validImg", "(*) Vui lòng nhập hình sản phẩm");
+        isValid &= valid.checkEmpty(price, "validPrice", "(*) Vui lòng nhập giá sản phẩm");
+        isValid &= valid.checkSelectOption("typeSP", "validType", "(*) Vui lòng chọn loại sản phẩm");
+        isValid &= valid.checkEmpty(description, "validDescrip", "(*) Vui lòng nhập mô tả sản phẩm");
     }
-    // Validation 
-    isValid &= valid.checkEmpty(name, "validName", "(*) Vui lòng nhập tên sản phẩm");
-    isValid &= valid.checkEmpty(img, "validImg", "(*) Vui lòng nhập hình sản phẩm");
-    isValid &= valid.checkEmpty(price, "validPrice", "(*) Vui lòng nhập giá sản phẩm");
-    isValid &= valid.checkSelectOption("typeSP", "validType", "(*) Vui lòng chọn loại sản phẩm");
-    isValid &= valid.checkEmpty(description, "validDescrip", "(*) Vui lòng nhập mô tả sản phẩm");
+
 
     if (!isValid) return;
 
-    const product = new Product("", name, img, price, type, description);
+    const product = new Product(id, name, img, price, type, description);
 
     return product;
 }
 function getListProduct() {
     const promise = service.fetchListData();
+    let count = 0;
     // pending => show loader
     getId("loader").style.display = "block";
 
@@ -41,7 +42,12 @@ function getListProduct() {
         .then(function (result) {
             console.log(result.data);
             listProduct = result.data;
+            const count = listProduct.length;
             renderHTML(result.data);
+            // Show Quantity Product 
+            getId("qtyProduct").innerHTML = count;
+            getId("qtyProduct").style.display = "block";
+
             // hidden loader
             getId("loader").style.display = "none";
         })
@@ -74,16 +80,16 @@ function renderHTML(data) {
                       <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         ${product.name}
                       </th>
-                      <td class="px-6 py-4">
+                      <td class="px-6 py-4 max-sm:hidden  ">
                         <img src="./../../asset/image/${product.img}" alt="" width="50">
                       </td>
-                      <td class="px-6 py-4">
+                      <td class="px-6 py-4 max-sm:hidden max-lg:hidden text-white">
                         ${product.type}
                       </td>
-                      <td class="px-6 py-4">
-                        ${product.price} $
+                      <td class="px-6 py-4 text-white">
+                          ${(product.price * 1000).toLocaleString("vi-VN")} ₫
                       </td>
-                      <td class="sm:flex-row md:flex lg:flex items-center space-x-2 px-6 py-4 gap-1 align-middle">
+                      <td class="max-sm:flex-row max-lg:flex-row lg:flex items-center space-x-2 px-6 py-4 gap-1 align-middle">
                         <button  class="font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline" 
                         data-modal-target="edit-modal" data-modal-toggle="edit-modal" 
                         onclick="onEdit(${product.id})">Sửa</button>
@@ -102,7 +108,7 @@ getId("btnThemSP").addEventListener("click", function () {
     openModal()
 
     // Update Title Modal 
-    getId("titleSP").innerHTML = "Them Moi San Pham";
+    getId("titleSP").innerHTML = "Thêm Mới Sản Phẩm";
 
     // Create button "Add Product"
     const btnAddProduct = `    <button  data-modal-toggle="crud-modal"
@@ -110,7 +116,7 @@ getId("btnThemSP").addEventListener("click", function () {
                                onclick="onAddProduct()"
                               type="button">
                               <i class="fa-solid fa-cart-plus"></i>
-                              Them moi
+                              Thêm mới
                             </button>`
     document.getElementsByClassName("classSubmit")[0].innerHTML = btnAddProduct;
     // reset form 
@@ -142,7 +148,7 @@ window.onDelete = onDelete;
 
 // Add Product 
 function onAddProduct() {
-    const product = getInfoProduct();
+    const product = getInfoProduct(true, "");
     // pending => show loader
     if (!product) return;
     getId("loader").style.display = "block";
@@ -168,15 +174,21 @@ window.onAddProduct = onAddProduct;
 function onEdit(id) {
     // Open Modal 
     openModal();
+    // CLose isValid warning 
+    getId("validName").style.display = "none";
+    getId("validImg").style.display = "none";
+    getId("validPrice").style.display = "none";
+    getId("validType").style.display = "none";
+    getId("validDescrip").style.display = "none";
     // Update Title Modal 
-    getId("titleSP").innerHTML = "Cap Nhat San Pham";
+    getId("titleSP").innerHTML = "Cập Nhật Sản Phẩm";
     // Create button "Update Product"
     const btnUpdateProduct = `<button  data-modal-toggle="crud-modal"
                               class="block cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"           
                               onclick="onUpdateProduct(${id})"                
                               type="button">
-                              <i class="fa-solid fa-cart-plus"></i>
-                              Cap Nhat
+                             <i class="fa-solid fa-wrench"></i>
+                              Cập nhật
                             </button>`
     document.getElementsByClassName("classSubmit")[0].innerHTML = btnUpdateProduct;
     // pending => show loader
@@ -197,21 +209,22 @@ function onEdit(id) {
             getId("loader").style.display = "none";
 
         })
-    // Update Product 
-    // getId("btnUpdate").addEventListener("click", onUpdateProduct(id))
+
 }
 window.onEdit = onEdit;
 
 // Update Product
 function onUpdateProduct(id) {
-    const name = getId("nameSP").value;
-    const img = getId("imgSP").value;
-    const price = getId("priceSP").value;
-    const type = getId("typeSP").value;
-    const description = getId("motaSP").value;
+    const product = getInfoProduct(false, id)
+
+    // const name = getId("nameSP").value;
+    // const img = getId("imgSP").value;
+    // const price = getId("priceSP").value;
+    // const type = getId("typeSP").value;
+    // const description = getId("motaSP").value;
 
 
-    const product = new Product(id, name, img, price, type, description);
+    // const product = new Product(id, name, img, price, type, description);
 
     if (!product) return;
     // pending => show loader
@@ -222,7 +235,7 @@ function onUpdateProduct(id) {
         .then(function (result) {
             getId("loader").style.display = "none";
             const data = result.data;
-            alert(`Update ${data.name} success`);
+            // alert(`Update ${data.name} success`);
 
             // close modal 
             getId("close-Modal").click();
@@ -298,6 +311,4 @@ getId("table-search").addEventListener("keyup", function () {
 function resetForm() {
     getId("product-form").reset();
 }
-
-
 
